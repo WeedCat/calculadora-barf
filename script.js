@@ -18,7 +18,14 @@ document.getElementById('calculatorForm').addEventListener('submit', function(ev
     const goal = document.getElementById('goal').value;
 
     // Cálculos básicos de las necesidades calóricas
-    const tmb = 70 * Math.pow(weight, 0.75); // Tasa Metabólica Basal
+    let tmb = 70 * Math.pow(weight, 0.75); // Tasa Metabólica Basal
+
+    // Ajuste de TMB según la edad del animal
+    if (age === 'cachorro') {
+        tmb = tmb * 2.0;  // Cachorros tienen un requerimiento calórico mucho mayor
+    } else if (age === 'senior') {
+        tmb = tmb * 1.2;  // Senior necesita menos calorías
+    }
 
     // Cálculo de calorías según nivel de actividad
     let calories = 0;
