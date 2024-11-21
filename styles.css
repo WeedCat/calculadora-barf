@@ -1,0 +1,61 @@
+body {
+    background-color: #f4f7fc;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+}
+
+label {
+    font-size: 1rem;
+}
+
+button {
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#results {
+    display: none;
+}
+
+#macros ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#macros li {
+    font-size: 1.1rem;
+}
+
+#totalFood {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.card-title {
+    color: #007bff;
+}
