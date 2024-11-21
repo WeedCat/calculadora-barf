@@ -1,5 +1,14 @@
+// Instancia de sonido con Howler.js para la animación de sonido
+var sound = new Howl({
+    src: ['https://www.soundjay.com/button/beep-07.wav'] // URL del sonido
+});
+
+// Event listener para el formulario de cálculo
 document.getElementById('calculatorForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita que el formulario se envíe y recargue la página
+
+    // Reproducir el sonido de clic
+    sound.play();
 
     // Obtenemos los valores del formulario
     const animalType = document.getElementById('animalType').value;
@@ -36,6 +45,15 @@ document.getElementById('calculatorForm').addEventListener('submit', function(ev
     document.getElementById('fatsAmount').innerText = Math.round(fats);
     document.getElementById('vegetablesAmount').innerText = Math.round(vegetables);
 
-    // Mostrar los resultados
-    document.getElementById('results').style.display = 'block';
+    // Mostrar ventana emergente con resultados
+    const popup = document.getElementById('results');
+    popup.style.display = 'block';
+
+    // Animación de entrada
+    popup.classList.add('animate__fadeIn');
+});
+
+// Cerrar ventana emergente
+document.getElementById('popupCloseBtn').addEventListener('click', function() {
+    document.getElementById('results').style.display = 'none';
 });
